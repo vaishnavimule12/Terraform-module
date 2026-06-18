@@ -10,14 +10,14 @@ module "myvpc"{
     instance_type = var.instance_type
     key_name = var.key_name
     route_cidr = var.route_cidr
-    vpc_security_group_ids = aws_security_group.my_sg
+    vpc_security_group_ids = [aws_security_group.my_sg.id]
 }
 module "myinstance"{
     source = "./instance"
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = aws_security_group.my_sg
+    vpc_security_group_ids = [aws_security_group.my_sg.id]
     tag_name = var.tag_name
 }
 resource "aws_security_group" "my_sg" {
