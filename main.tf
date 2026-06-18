@@ -17,7 +17,7 @@ module "myinstance"{
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = aws_security_group.my_sg
+    vpc_security_group_ids = [aws_security_group.my_sg]
     tag_name = var.tag_name
 }
 resource "aws_security_group" "my_sg" {
