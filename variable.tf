@@ -31,3 +31,6 @@ variable "route_cidr" {
 variable "tag_name" {
   default = "my-instance"
 }
+variable "vpc_id" {
+  type = string
+}
