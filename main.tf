@@ -21,6 +21,7 @@ module "myinstance"{
     tag_name = var.tag_name
 }
 resource "aws_security_group" "my_sg" {
+  source = "./vpc"
   name   = "my-sg"
   vpc_id = aws_vpc.my_vpc.id
 
