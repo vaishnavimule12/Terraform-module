@@ -25,9 +25,6 @@ variable "instance_type" {
 variable "key_name" {
   default = "security-key"
 }
-variable "vpc_security_group_ids" {
-  default = aws_security_group.my_sg.id
-}
 variable "route_cidr" {
   default = "0.0.0.0/0"
 }
