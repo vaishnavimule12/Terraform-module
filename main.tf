@@ -7,16 +7,16 @@ module "myvpc"{
     availability_zone1 = var.availability_zone1
     availability_zone2 = var.availability_zone2
     ami = var.ami
+    route_cidr = var.route_cidr
     instance_type = var.instance_type
     key_name = var.key_name
     vpc_security_group_ids = var.vpc_security_group_ids
-    route_cidr = var.route_cidr
 }
 module "myinstance"{
     source = "./instance"
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    aws_security_group = module.myvpc.vpc_security_group_id
+    vpc_security_group_ids = module.myvpc.vpc_security_group_ids
     tag_name = var.tag_name
 }
