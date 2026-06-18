@@ -17,6 +17,7 @@ module "myinstance"{
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
+    subnet_id = module.myvpc.pub-sub.id
     vpc_security_group_ids = [aws_security_group.my_sg.id]
     tag_name = var.tag_name
 }
