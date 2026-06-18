@@ -1,0 +1,10 @@
+variable "region" {}
+variable "vpc_cidr" {}
+variable "pub_sub_cidr" {}
+variable "pvt_sub_cidr" {}
+variable "availability_zone1" {}
+variable "availability_zone2" {}
+variable "ami" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "vpc_security_group_ids" {}
