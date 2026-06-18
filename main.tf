@@ -1,5 +1,5 @@
 module "myvpc"{
-    source = "vpc"
+    source = "./vpc"
     region = var.region
     vpc_cidr = var.vpc_cidr
     pub_sub_cidr = var.pub_sub_cidr
@@ -13,7 +13,7 @@ module "myvpc"{
     route_cidr = var.route_cidr
 }
 module "myinstance"{
-    source = "instance"
+    source = "./instance"
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
